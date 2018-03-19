@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Test]]></title>
+    <url>%2Funcategorized%2FTest%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Git连接超时]]></title>
+    <url>%2Funcategorized%2FGitTimeOut%2F</url>
+    <content type="text"><![CDATA[今天写完文章提交时碰到了Git连接超时问题，提示如下 Error: ssh: connect to host github.com port 22: Connection timed out… 解决方案为找到安装Git的根目录/etc/ssh/ssh_config文件，用编辑器打开后添加下列内容 Host github.com User git Hostname ssh.github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Port 443 执行 ssh -T git@github.com 测试git是否成功连接github询问是否确定想继续连接时直接 yes 就可以，完工！]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Nginx域名跳转]]></title>
+    <url>%2Funcategorized%2FNginxAutoMaticJump%2F</url>
+    <content type="text"><![CDATA[利用修改 Nginx 的 nginx.conf 文件实现域名跳转worker_processes 2;#工作进程的个数，一般与计算机的cpu核数一致 events { worker_connections 1024;#单个进程最大连接数（最大连接数=连接数*进程数） } http { include mime.types; #文件扩展名与文件类型映射表 default_type application/octet-stream;#默认文件类型 sendfile on;#开启高效文件传输模式 keepalive_timeout 65; #长连接超时时间，单位是秒 gzip on;#启用Gizp压缩 #服务器的集群 upstream liyachuan.com { #服务器集群名字 server 127.0.0.1:80 weight=1;#服务器配置 weight是权重的意思，权重越大，分配的概率越大。 } #当前的Nginx的配置 server { listen 80;#监听80端口，可以改成其他端口 server_name 59.110.170.223;############## 当前服务的域名 location / { proxy_pass https://liyachuan.github.io; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } }]]></content>
+      <tags>
+        <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Tomcat自动跳转]]></title>
+    <url>%2Funcategorized%2FTomcatAutoMaticJump%2F</url>
+    <content type="text"><![CDATA[Tomcat自动跳转汗颜，有个笨方法用以实现自动跳转。将 webapps 下ROOT目录的 index.jsp 改为 index.jsp.bak 作为备份，创建 index.html 文件，内容为 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;自动跳转&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt; window.location.href=&quot;https://liyachuan.github.io&quot;; &lt;!--跳转页面--&gt; &lt;/script&gt; &lt;/html&gt;]]></content>
+      <tags>
+        <tag>Tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[搭建个人博客]]></title>
+    <url>%2Funcategorized%2FBuildBlog%2F</url>
+    <content type="text"><![CDATA[本文引用于 gdutxiaoxu的Hexo+GitHub搭建个人博客 少做修改作为学习记录。 记录今日搭建博客流程和遇到的问题 安装、配置Hexo 将Hexo与github page关联 发布文章 主题 添加sitemap和feed插件 安装、配置Hexo Windows Installer 64-bit Windows Installer 32-bit 根据Windows版本选择相应的安装文件（右键‘我的电脑’属性中查看）。下载完成后默认安装就可以，放置路径可以自行修改。安装结束后同时按下Win+R打开运行窗口，键入cmd后点击确定按钮。在打开的窗口中输入 node -v npm -v得到的结果若如下图所示，则说明安装成功Git官网下载地址，Git的安装过程同样保持默认就可以，安装路径可以自行修改。安装完成后Win+R打开命令行，输入 git --version得到结果如下图则代表正确 GitHub账户注册与配置Git方面博主也是新手，这里不再过多阐述。可以参考廖雪峰的Git教程自行学习，写的非常非常好在完成注册之后创建代码库，如图所示在创建代码库页面中，Repository name表单中填写yourname.github.io，Description(optional)选填。如图所示我的名字是liyachuan,所以我在此处填写liyachuan.github.io。填写完成后点击创建代码库按钮级进行提交。在创建成功后的页面上面的tap中选择settings，下拉至GitHub Pages。若如下图所示则说明该功能开启。没有的话请百度一下，因为我创建的时候GitHub就自动配置了，我没有配置过（尴尬）。 安装Hexo接下来创建一个文件夹（位置随意），我创建在了D盘下，名称为hexo。从命令行进入该目录，然后输入 npm install hexo-cli -g结果如图所示（我已安装过，就不再执行，这里引用一下我学习的博客中展示的图片）出现一个WARN不必过虑，不会影响正常使用，继续输入 npm install hexo --save在命令行刷过一堆白字后，接下来验证是否已经安装成功，输入 hexo -v如图所示，则代表安装成功，然后再安装一个拓展 npm install hexo-deployer-git --save 配置Hexo接下来初始化Hexo，输入 hexo init npm install接下里npm会自动安装需要的组建，只需等待npm操作即可。完成后继续输入 hexo g提示： INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 打开浏览器在地址栏输入http://localhost:4000，打开后若如图中所示，则说明Hexo在本地已经配置结束。 关联Hexo和GitHub page配置Git个人信息 设置Git的user name和email（若之前已经配置过则可以跳过）git config --global user.name &quot;your name&quot; git config --global user.email &quot;your email&quot; 生成密钥ssh-keygen -t rsa -C &quot;your email&quot;将生成的密钥添加到GitHub账户的SSH keys中，具体操作参考 gdutxiaoxu的Git ssh 配置及使用 配置Deployment在你刚才创建安装hexo的目录下找到_config.yml文件，打开找到Deployment，然后如下修改 deploy: type: git repo: git@github.com:yourname/yourname.github.io.git branch: master 编写博客、发布文章新建一篇博客，执行命令 hexo new post &quot;test&quot;回车执行后会提示 INFO Created:安装目录\source_posts\test.md 然后用MarkDownPad2进行编辑就可以，文章编辑好后运行生成、部署命令 hexo g //生成 hexo d //部署 hexo d -g //这是二合一，与上面两条命令结果相同部署成功后访问地址 https://yourname.github.io 就可以看到结果啦！ 主题我现在用的是 https://github.com/iissnan/hexo-theme-next，里面有中文文档可以参阅，具体的样式设置、语言设置、新页面等都有说明。这里就不再多做记录，犯懒了。 添加插件添加sutenao个feed插件，命令行进入安装hexo的目录，输入 npm install hexo-generator-feed -save npm install hexo-generator-sitemap -save修改_config.yml，增加一下内容 Plugins: hexo-generator-feed hexo-generator-sitemapfeed:&nbsp;&nbsp;&nbsp;&nbsp;type:atom&nbsp;&nbsp;&nbsp;&nbsp;path: atom.xml&nbsp;&nbsp;&nbsp;&nbsp;limit: 20sitemap:&nbsp;&nbsp;&nbsp;&nbsp;path: sitemap.xml 在执行一下命令，部署服务端 hexo d -g配完之后，就可以访问 https://yourname.github.io/atom.xml 和 https://yourname.github.io/sitemap.xml ，发现这两个文件已经成功生成了。]]></content>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+</search>

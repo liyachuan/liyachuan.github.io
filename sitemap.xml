@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/uncategorized/GitWarningRecord/</loc>
+    
+    <lastmod>2018-03-19T07:39:49.999Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/uncategorized/BuildBlog/</loc>
+    
+    <lastmod>2018-03-19T07:22:55.209Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/uncategorized/HexoBackup/</loc>
     
-    <lastmod>2018-03-19T06:38:14.008Z</lastmod>
+    <lastmod>2018-03-19T07:08:12.186Z</lastmod>
     
   </url>
   
@@ -30,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/uncategorized/NginxAutoMaticJump/</loc>
-    
-    <lastmod>2018-03-19T04:12:39.657Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/uncategorized/GitTimeOut/</loc>
     
     <lastmod>2018-03-19T04:12:39.657Z</lastmod>
@@ -44,7 +51,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/uncategorized/BuildBlog/</loc>
+    <loc>http://yoursite.com/uncategorized/NginxAutoMaticJump/</loc>
     
     <lastmod>2018-03-19T04:12:39.657Z</lastmod>
     

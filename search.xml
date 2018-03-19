@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Test]]></title>
-    <url>%2Funcategorized%2FTest%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[Git连接超时]]></title>
     <url>%2Funcategorized%2FGitTimeOut%2F</url>
     <content type="text"><![CDATA[今天写完文章提交时碰到了Git连接超时问题，提示如下 Error: ssh: connect to host github.com port 22: Connection timed out… 解决方案为找到安装Git的根目录/etc/ssh/ssh_config文件，用编辑器打开后添加下列内容 Host github.com User git Hostname ssh.github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Port 443 执行 ssh -T git@github.com 测试git是否成功连接github询问是否确定想继续连接时直接 yes 就可以，完工！]]></content>

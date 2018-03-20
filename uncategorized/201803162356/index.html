@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="Tomcat," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="前几天搭建好 hexo 后，接下来就研究如何对 hexo 进行备份，解决换电脑后无法编辑博客的尴尬情景。解决方案网上有很多，在此记录一种刚测试通过的处理流程。 在码云或者GitHub上创建代码库，保留以下目录scaffolds source themes _config.yml package.json .gitgnore 注：_config.yml是站点配置文件，theme中是主题，source">
-<meta name="keywords" content="hexo">
+<meta name="description" content="Tomcat自动跳转汗颜，有个笨方法用以实现自动跳转。将 webapps 下ROOT目录的 index.jsp 改为 index.jsp.bak 作为备份，创建 index.html 文件，内容为 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;自">
+<meta name="keywords" content="Tomcat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 备份与恢复">
-<meta property="og:url" content="http://yoursite.com/uncategorized/HexoBackup/index.html">
+<meta property="og:title" content="Tomcat自动跳转">
+<meta property="og:url" content="http://yoursite.com/uncategorized/201803162356/index.html">
 <meta property="og:site_name" content="Yc&#39;s Blog">
-<meta property="og:description" content="前几天搭建好 hexo 后，接下来就研究如何对 hexo 进行备份，解决换电脑后无法编辑博客的尴尬情景。解决方案网上有很多，在此记录一种刚测试通过的处理流程。 在码云或者GitHub上创建代码库，保留以下目录scaffolds source themes _config.yml package.json .gitgnore 注：_config.yml是站点配置文件，theme中是主题，source">
+<meta property="og:description" content="Tomcat自动跳转汗颜，有个笨方法用以实现自动跳转。将 webapps 下ROOT目录的 index.jsp 改为 index.jsp.bak 作为备份，创建 index.html 文件，内容为 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;自">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-19T07:08:12.186Z">
+<meta property="og:updated_time" content="2018-03-19T04:12:39.658Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 备份与恢复">
-<meta name="twitter:description" content="前几天搭建好 hexo 后，接下来就研究如何对 hexo 进行备份，解决换电脑后无法编辑博客的尴尬情景。解决方案网上有很多，在此记录一种刚测试通过的处理流程。 在码云或者GitHub上创建代码库，保留以下目录scaffolds source themes _config.yml package.json .gitgnore 注：_config.yml是站点配置文件，theme中是主题，source">
+<meta name="twitter:title" content="Tomcat自动跳转">
+<meta name="twitter:description" content="Tomcat自动跳转汗颜，有个笨方法用以实现自动跳转。将 webapps 下ROOT目录的 index.jsp 改为 index.jsp.bak 作为备份，创建 index.html 文件，内容为 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;自">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/uncategorized/HexoBackup/"/>
+  <link rel="canonical" href="http://yoursite.com/uncategorized/201803162356/"/>
 
 
 
 
 
-  <title>Hexo 备份与恢复 | Yc's Blog</title>
+  <title>Tomcat自动跳转 | Yc's Blog</title>
   
 
 
@@ -287,7 +287,7 @@
   
   <div class="post-block">
   
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/HexoBackup/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/201803162356/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yc">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo 备份与恢复</h1>
+          <h1 class="post-title" itemprop="name headline">Tomcat自动跳转</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T13:28:05+08:00">
-                2018-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T23:56:52+08:00">
+                2018-03-16
               </time>
             
 
@@ -332,7 +332,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-19T15:08:12+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-19T12:12:39+08:00">
                 2018-03-19
               </time>
             
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  326
+                  83
                 </span>
               
 
@@ -402,32 +402,20 @@
       
 
       
-        <p>前几天搭建好 hexo 后，接下来就研究如何对 hexo 进行备份，解决换电脑后无法编辑博客的尴尬情景。解决方案网上有很多，在此记录一种刚测试通过的处理流程。</p>
-<h2 id="在码云或者GitHub上创建代码库，保留以下目录"><a href="#在码云或者GitHub上创建代码库，保留以下目录" class="headerlink" title="在码云或者GitHub上创建代码库，保留以下目录"></a>在码云或者GitHub上创建代码库，保留以下目录</h2><pre><code>scaffolds
-source
-themes
-_config.yml
-package.json
-.gitgnore
-</code></pre><p>注：_config.yml是站点配置文件，theme中是主题，source博客编辑文件，scaffolds文章模板，package.json包使用说明和.gitgnore限定提交的时候哪些文件可以忽略（.gitgnore这个文件我这里是 .npmignore）。最后推送至远程库。</p>
-<h2 id="环境部署"><a href="#环境部署" class="headerlink" title="环境部署"></a>环境部署</h2><ul>
-<li>node.js</li>
-<li>Git</li>
-<li>MarkDownPad 2</li>
-</ul>
-<p>安装过程参考搭建过程，只需注意不要执行 hexo init，据说会清空 _config.yml 的内容至默认。把备份的代码库 clone 到本地，打开命令行至根目录依次执行以下指令</p>
-<pre><code>npm install hexo-cli -g
-npm install hexo --save
-npm install
-hexo generate
-</code></pre><p>安装之前装过的组件</p>
-<pre><code>npm install hexo-deployer-git --save
-npm install hexo-generator-feed -save
-npm install hexo-generator-sitemap -save
-npm install hexo-generator-searchdb --save
-npm install hexo-wordcount --save
-</code></pre><p>最后启动测试一下是否正常运行就完事了，之后新增或修改文章后记得推送到代码库就可以（还是那几个文件）。</p>
-
+        <h1 id="Tomcat自动跳转"><a href="#Tomcat自动跳转" class="headerlink" title="Tomcat自动跳转"></a>Tomcat自动跳转</h1><p>汗颜，有个笨方法用以实现自动跳转。将 webapps 下ROOT目录的 index.jsp 改为 index.jsp.bak 作为备份，创建 index.html 文件，内容为<br></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;自动跳转&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;                    
+　　　　window.location.href=&quot;https://liyachuan.github.io&quot;; &lt;!--跳转页面--&gt;
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
       
     </div>
 	<div>
@@ -450,7 +438,7 @@ npm install hexo-wordcount --save
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/Tomcat/" rel="tag"># Tomcat</a>
           
         </div>
       
@@ -463,8 +451,8 @@ npm install hexo-wordcount --save
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/uncategorized/GitTimeOut/" rel="next" title="Git连接超时">
-                <i class="fa fa-chevron-left"></i> Git连接超时
+              <a href="/uncategorized/201803162112/" rel="next" title="搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 搭建个人博客
               </a>
             
           </div>
@@ -473,8 +461,8 @@ npm install hexo-wordcount --save
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/uncategorized/GitWarningRecord/" rel="prev" title="Git警告记录及解决方案">
-                Git警告记录及解决方案 <i class="fa fa-chevron-right"></i>
+              <a href="/uncategorized/201803171126/" rel="prev" title="Nginx域名跳转">
+                Nginx域名跳转 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -546,7 +534,7 @@ npm install hexo-wordcount --save
                 alt="Yc" />
             
               <p class="site-author-name" itemprop="name">Yc</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">静坐常思己过 闲谈莫论人非</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -556,7 +544,7 @@ npm install hexo-wordcount --save
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -625,7 +613,7 @@ npm install hexo-wordcount --save
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在码云或者GitHub上创建代码库，保留以下目录"><span class="nav-number">1.</span> <span class="nav-text">在码云或者GitHub上创建代码库，保留以下目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境部署"><span class="nav-number">2.</span> <span class="nav-text">环境部署</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tomcat自动跳转"><span class="nav-number">1.</span> <span class="nav-text">Tomcat自动跳转</span></a></li></ol></div>
             
 
           </div>

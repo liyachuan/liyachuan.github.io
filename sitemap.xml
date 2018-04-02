@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Jenkins/201804021357/</loc>
+    
+    <lastmod>2018-04-02T08:00:44.265Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android/201803211219/</loc>
+    
+    <lastmod>2018-03-21T04:27:01.571Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Tomcat/201803162356/</loc>
     
     <lastmod>2018-03-20T01:24:20.643Z</lastmod>

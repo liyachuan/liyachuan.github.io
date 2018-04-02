@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Jenkins安装与部署]]></title>
+    <url>%2FJenkins%2F201804021357%2F</url>
+    <content type="text"><![CDATA[我的环境 【Jenkins 2.107.1】 【jdk1.8.0_45】 在官网下载 https://jenkins.io/ 最新war包，使用下方命令直接运行就可以。前提是确保已经正确安装了JDK并且配置环境变量。 java -jar jenkins.war 默认使用8080端口，自定义需要追加参数 java -jar jenkins.war --httpPort=8000 运行后打开浏览器在地址栏输入 http://localhost:8080 （端口号可根据实际情况修改），打开页面中指明路径的文件复制内容粘贴到表单，然后继续 若出现上图情况，则另打开一个空白页面地址栏输入 http://localhost:8080/pluginManager/advanced （端口号根据实际情况修改），在页面下方的【升级站点】中把 https 改成 http 然后提交，重启 Jenkins。正常情况如下图，直接点击【推荐安装】然后等待安装。 全部安装成功后，进入下一个页面创建用户后继续 主页面 点击左侧【系统管理】-【全局工具配置】，下图是配置之前 下图是配置之后 这个时候新建时是没有【构建一个maven项目】选项的，所以需要下载 Maven Integration 插件，在首页点击【系统管理】-【管理插件】-【可选插件】右侧表单输入 Maven Integration ，在列表中选中后点击【直接安装】。安装完毕回到首页，点击【新建任务】-【构建一个maven项目】，任务名称自行填写，具体如下图 确认后进入任务配置界面，下图为默认配置 下图为编辑过后 注意：需要下载 Deploy to container 插件才可以配置【构建后操作】中的远程部署到 tomcat。我填写的 tomcat 地址的端口号是因为我的Jenkins的端口是8000，灵活修改。tomcat 还需要配置用户并保持启动。下面是我的 tomcat-users.xml 文件中 节点的内容 &lt;tomcat-users&gt; &lt;role rolename=&quot;manager-gui&quot;/&gt; &lt;role rolename=&quot;manager-script&quot;/&gt; &lt;role rolename=&quot;manager-jmx&quot;/&gt; &lt;role rolename=&quot;manager-status&quot;/&gt; &lt;role rolename=&quot;manager&quot;/&gt; &lt;role rolename=&quot;admin&quot;/&gt; &lt;user username=&quot;liyachuan&quot; password=&quot;123456&quot; roles=&quot;manager-gui,manager-script,manager-jmx,manager-status,admin,manager&quot;/&gt; &lt;/tomcat-users&gt; 最终，在项目页面中点击【立即构建】就完事儿了。]]></content>
+      <categories>
+        <category>Jenkins</category>
+      </categories>
+      <tags>
+        <tag>Jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android 学习记录（一）：发送 http 请求]]></title>
+    <url>%2FAndroid%2F201803211219%2F</url>
+    <content type="text"><![CDATA[/** * 使用异步http框架发送get请求 * * @param path get路径，中文参数需要编码（URLEncoder.encode） */ public void doGet(String path) { AsyncHttpClient httpClient = new AsyncHttpClient(); httpClient.get(path, new AsyncHttpResponseHandler() { @Override public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) { if (statusCode == 200) { try { //此处应该根据服务端的编码格式进行编码，否则会乱码 System.out.println(&quot;Post:&quot;+new String(responseBody, &quot;utf-8&quot;)); } catch (UnsupportedEncodingException e) { e.printStackTrace(); } } } @Override public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) { System.out.println(&quot;-------Error-------&quot;); } }); } /** * 使用异步http框架发送get请求 * * @param path */ public void doPost(String path) { AsyncHttpClient httpClient = new AsyncHttpClient(); RequestParams params = new RequestParams(); params.put(&quot;&quot;, &quot;&quot;);//value可以是流、文件、对象等其他类型,很强大!! httpClient.post(path, params, new AsyncHttpResponseHandler() { @Override public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) { if (statusCode == 200) { try { //此处应该根据服务端的编码格式进行编码，否则会乱码 System.out.println(&quot;Get:&quot;+new String(responseBody, &quot;utf-8&quot;)); } catch (UnsupportedEncodingException e) { e.printStackTrace(); } } } @Override public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) { System.out.println(&quot;-------Error-------&quot;); } }); }]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git常见问题及解决方案]]></title>
     <url>%2FGit%2F201803201527%2F</url>
     <content type="text"><![CDATA[warning: LF will be replaced by CRLF in _config.yml. The file will have its original line endings in your working directory.原文地址：http://blog.csdn.net/starry_night9280/article/details/53207928 问题出在不同操作系统所使用的换行符是不一样的，下面罗列一下三大主流操作系统的换行符： Uinx/Linux采用换行符LF表示下一行（LF：LineFeed，中文意思是换行）。 Dos和Windows采用回车+换行CRLF表示下一行（CRLF：CarriageReturn LineFeed，中文意思是回车换行）。 Mac OS采用回车CR表示下一行（CR：CarriageReturn，中文意思是回车）。 在Git中，可以通过以下命令来显示当前你的Git中采取哪种对待换行符的方式 git config core.autocrlf 此命令会有三个输出，“true”，“false”或者“input” 为true时，Git会将你add的所有文件视为文本问价你，将结尾的CRLF转换为LF，而checkout时会再将文件的LF格式转为CRLF格式。 为false时，line endings不做任何改变，文本文件保持其原来的样子。 为input时，add时Git会把CRLF转换为LF，而check时仍旧为LF，所以Windows操作系统不建议设置此值。 解决方案： 将core.autocrlf设为false即可解决这个问题，不过如果你和你的伙伴只工作于Windows平台或者Linux平台，那么没问题，不过如果是存在跨平台的现象的话，还是需要考虑一下。但当 core autocrlf为true时，还有一个需要慎重的地方，当你上传一个二进制文件，Git可能会将二进制文件误以为是文本文件，从而也会修改你的二进制文件，从而产生隐患。 PS:附上修改autocrlf的命令，以改为true为例： git config --global core.autocrlf true #true的位置放你想使autocrlf成为的结果，true，false或者input Error: ssh: connect to host github.com port 22: Connection timed out…（Git连接超时）解决方案为找到安装Git的根目录/etc/ssh/ssh_config文件，用编辑器打开后添加下列内容 Host github.com User git Hostname ssh.github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Port 443 执行 ssh -T git@github.com 测试git是否成功连接github 询问是否确定想继续连接时直接 yes 就可以，完工！]]></content>

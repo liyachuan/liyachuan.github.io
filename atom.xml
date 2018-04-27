@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-16T02:33:07.002Z</updated>
+  <updated>2018-04-27T08:18:22.603Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>分行读取String内容</title>
+    <link href="http://yoursite.com/Java/201804271610/"/>
+    <id>http://yoursite.com/Java/201804271610/</id>
+    <published>2018-04-27T08:10:55.000Z</published>
+    <updated>2018-04-27T08:18:22.603Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>public static void main(String[] args) {    try {        String s = &quot;test\r\ntest\r\ntest\r\n \r\ntest\r\n&quot;;        InputStreamReader in = new InputStreamReader(new ByteArrayInputStream(s.getBytes(Charset.forName(&quot;utf8&quot;))), Charset.forName(&quot;utf8&quot;));        BufferedReader br = new BufferedReader(in);        String line = null;        StringBuffer sb = new StringBuffer();        while ((line = br.readLine()) != null) {            if (!line.trim().isEmpty()) {                line = &quot;--&quot; + line;                sb.append(line + &quot;\r\n&quot;);            }        }        System.out.println(sb.toString());    } catch (Exception ex) {        ex.printStackTrace();    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;public static void main(String[] args) {
+    try {
+        String s = &amp;quot;test\r\ntest\r\ntest\r\n \r\ntest\r\n&amp;quot;;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 学习记录（三）：运行时动态授权管理</title>

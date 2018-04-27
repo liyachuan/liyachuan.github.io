@@ -286,6 +286,212 @@
   
   <div class="post-block">
   
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/201804271610/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.17173cdn.com/9ih5jd/YWxqaGBf/forum/images/2013/06/22/202638mqj95xb9t5zqwpwp.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yc's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Java/201804271610/" itemprop="url">分行读取String内容</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T16:10:55+08:00">
+                2018-04-27
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-27T16:18:22+08:00">
+                2018-04-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  72
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>public static void main(String[] args) {
+    try {
+        String s = &quot;test\r\ntest\r\ntest\r\n \r\ntest\r\n&quot;;
+        InputStreamReader in = new InputStreamReader(new ByteArrayInputStream(s.getBytes(Charset.forName(&quot;utf8&quot;))), Charset.forName(&quot;utf8&quot;));
+        BufferedReader br = new BufferedReader(in);
+        String line = null;
+        StringBuffer sb = new StringBuffer();
+        while ((line = br.readLine()) != null) {
+            if (!line.trim().isEmpty()) {
+                line = &quot;--&quot; + line;
+                sb.append(line + &quot;\r\n&quot;);
+            }
+        }
+        System.out.println(sb.toString());
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+}
+</code></pre>
+          
+        
+      
+    </div>
+	<div>
+		
+	 </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+  
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android/201804161022/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2608,7 +2814,7 @@ path: sitemap.xml
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2619,7 +2825,7 @@ path: sitemap.xml
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2630,7 +2836,7 @@ path: sitemap.xml
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

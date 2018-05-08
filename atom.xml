@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-08T08:33:29.417Z</updated>
+  <updated>2018-05-08T08:45:22.544Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>201805081632</title>
+    <title>Java BigDecimal开方</title>
     <link href="http://yoursite.com/Java/201805081632/"/>
     <id>http://yoursite.com/Java/201805081632/</id>
     <published>2018-05-08T08:32:05.000Z</published>
-    <updated>2018-05-08T08:33:29.417Z</updated>
+    <updated>2018-05-08T08:45:22.544Z</updated>
     
     <content type="html"><![CDATA[<p>原文连接：<a href="https://blog.csdn.net/RickyIT/article/details/78051334" title="https://blog.csdn.net/RickyIT/article/details/78051334" target="_blank" rel="noopener">https://blog.csdn.net/RickyIT/article/details/78051334</a></p><pre><code>/** * 标准差σ=sqrt(s^2) * 结果精度：scale * 牛顿迭代法求大数开方 * * @param x * @param scale * @return */public static BigDecimal standardDeviation(BigDecimal[] x, int scale) {    //方差    BigDecimal variance = variance(x, scale);    BigDecimal base2 = BigDecimal.valueOf(2.0);    //计算精度    int precision = 100;    MathContext mc = new MathContext(precision, RoundingMode.HALF_UP);    BigDecimal deviation = variance;    int cnt = 0;    while (cnt &lt; 100) {        deviation = (deviation.add(variance.divide(deviation, mc))).divide(base2, mc);        cnt++;    }    deviation = deviation.setScale(scale, BigDecimal.ROUND_HALF_UP);    return deviation;}</code></pre>]]></content>
     

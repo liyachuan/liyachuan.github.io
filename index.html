@@ -286,6 +286,474 @@
   
   <div class="post-block">
   
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/201805081632/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.17173cdn.com/9ih5jd/YWxqaGBf/forum/images/2013/06/22/202638mqj95xb9t5zqwpwp.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yc's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Java/201805081632/" itemprop="url">201805081632</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T16:32:05+08:00">
+                2018-05-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-08T16:33:29+08:00">
+                2018-05-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  102
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原文连接：<a href="https://blog.csdn.net/RickyIT/article/details/78051334" title="https://blog.csdn.net/RickyIT/article/details/78051334" target="_blank" rel="noopener">https://blog.csdn.net/RickyIT/article/details/78051334</a></p>
+<pre><code>/**
+ * 标准差σ=sqrt(s^2)
+ * 结果精度：scale
+ * 牛顿迭代法求大数开方
+ *
+ * @param x
+ * @param scale
+ * @return
+ */
+public static BigDecimal standardDeviation(BigDecimal[] x, int scale) {
+    //方差
+    BigDecimal variance = variance(x, scale);
+    BigDecimal base2 = BigDecimal.valueOf(2.0);
+    //计算精度
+    int precision = 100;
+    MathContext mc = new MathContext(precision, RoundingMode.HALF_UP);
+    BigDecimal deviation = variance;
+    int cnt = 0;
+    while (cnt &lt; 100) {
+        deviation = (deviation.add(variance.divide(deviation, mc))).divide(base2, mc);
+        cnt++;
+    }
+    deviation = deviation.setScale(scale, BigDecimal.ROUND_HALF_UP);
+    return deviation;
+}
+</code></pre>
+          
+        
+      
+    </div>
+	<div>
+		
+	 </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+  
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/201805081627/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.17173cdn.com/9ih5jd/YWxqaGBf/forum/images/2013/06/22/202638mqj95xb9t5zqwpwp.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yc's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Java/201805081627/" itemprop="url">listFiles()按文件大小、名称、日期排序方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T16:27:11+08:00">
+                2018-05-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-08T16:30:07+08:00">
+                2018-05-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  226
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>按照文件大小排序 </p>
+<pre><code>public static void orderByLength(String fliePath) {
+    List&lt;File&gt; files = Arrays.asList(new File(fliePath).listFiles());
+    Collections.sort(files, new Comparator&lt;File&gt;() {
+        public int compare(File f1, File f2) {
+            long diff = f1.length() - f2.length();
+            if (diff &gt; 0)
+                return 1;
+            else if (diff == 0)
+                return 0;
+            else
+                return -1;
+        }
+
+        public boolean equals(Object obj) {
+            return true;
+        }
+    });
+    for (File f : files) {
+        if (f.isDirectory())
+            continue;
+        System.out.println(f.getName() + &quot;:&quot; + f.length());
+    }
+}
+</code></pre><p>按照文件名称排序</p>
+<pre><code>public static void orderByName(String fliePath) {
+    List files = Arrays.asList(new File(fliePath).listFiles());
+    Collections.sort(files, new Comparator&lt;File&gt;() {
+        @Override
+        public int compare(File o1, File o2) {
+            if (o1.isDirectory() &amp;&amp; o2.isFile())
+                return -1;
+            if (o1.isFile() &amp;&amp; o2.isDirectory())
+                return 1;
+            return o1.getName().compareTo(o2.getName());
+        }
+    });
+    for (File f : files) {
+        System.out.println(f.getName());
+    }
+}
+</code></pre><p>按日期排序</p>
+<pre><code>public static void orderByDate(String fliePath) {
+    File file = new File(fliePath);
+    File[] fs = file.listFiles();
+    Arrays.sort(fs, new Comparator&lt;File&gt;() {
+        public int compare(File f1, File f2) {
+            long diff = f1.lastModified() - f2.lastModified();
+            if (diff &gt; 0)
+                return 1;
+            else if (diff == 0)
+                return 0;
+            else
+                return -1;
+        }
+
+        public boolean equals(Object obj) {
+            return true;
+        }
+
+    });
+    for (int i = fs.length - 1; i &gt; -1; i--) {
+        System.out.println(fs[i].getName());
+        System.out.println(new Date(fs[i].lastModified()));
+    }
+}
+</code></pre>
+          
+        
+      
+    </div>
+	<div>
+		
+	 </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+  
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/Java/201804271610/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2295,478 +2763,13 @@ http {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-  
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tomcat/201803162356/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.17173cdn.com/9ih5jd/YWxqaGBf/forum/images/2013/06/22/202638mqj95xb9t5zqwpwp.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yc's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Tomcat/201803162356/" itemprop="url">Tomcat自动跳转</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T23:56:52+08:00">
-                2018-03-16
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-20T09:24:20+08:00">
-                2018-03-20
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tomcat/" itemprop="url" rel="index">
-                    <span itemprop="name">Tomcat</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  83
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Tomcat自动跳转"><a href="#Tomcat自动跳转" class="headerlink" title="Tomcat自动跳转"></a>Tomcat自动跳转</h1><p>汗颜，有个笨方法用以实现自动跳转。将 webapps 下ROOT目录的 index.jsp 改为 index.jsp.bak 作为备份，创建 index.html 文件，内容为<br></p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;title&gt;自动跳转&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;/body&gt;
-&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;                    
-　　　　window.location.href=&quot;https://liyachuan.github.io&quot;; &lt;!--跳转页面--&gt;
-&lt;/script&gt;
-&lt;/html&gt;
-</code></pre>
-          
-        
-      
-    </div>
-	<div>
-		
-	 </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-  
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/hexo/201803162112/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.17173cdn.com/9ih5jd/YWxqaGBf/forum/images/2013/06/22/202638mqj95xb9t5zqwpwp.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yc's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo/201803162112/" itemprop="url">搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T21:12:04+08:00">
-                2018-03-16
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-20T09:23:53+08:00">
-                2018-03-20
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,112
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>本文引用于 gdutxiaoxu的<a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="noopener">Hexo+GitHub搭建个人博客</a> 少做修改作为学习记录。</p>
-<h1 id="记录今日搭建博客流程和遇到的问题"><a href="#记录今日搭建博客流程和遇到的问题" class="headerlink" title="记录今日搭建博客流程和遇到的问题"></a>记录今日搭建博客流程和遇到的问题</h1><ul>
-<li>安装、配置Hexo</li>
-<li>将Hexo与github page关联</li>
-<li>发布文章</li>
-<li>主题</li>
-<li>添加sitemap和feed插件</li>
-</ul>
-<h1 id="安装、配置Hexo"><a href="#安装、配置Hexo" class="headerlink" title="安装、配置Hexo"></a>安装、配置Hexo</h1><ul>
-<li><a href="https://nodejs.org/dist/v6.9.0/node-v6.9.0-x64.msi" target="_blank" rel="noopener">Windows Installer 64-bit</a></li>
-<li><a href="https://nodejs.org/dist/v6.9.0/node-v6.9.0-x32.msi" target="_blank" rel="noopener">Windows Installer 32-bit</a></li>
-</ul>
-<p>根据Windows版本选择相应的安装文件（右键‘我的电脑’属性中查看）。下载完成后默认安装就可以，放置路径可以自行修改。安装结束后同时按下Win+R打开运行窗口，键入cmd后点击确定按钮。在打开的窗口中输入</p>
-<pre><code>node -v
-npm -v
-</code></pre><p>得到的结果若如下图所示，则说明安装成功<br><br><img src="https://i.imgur.com/WVaVzA8.png" alt=""><br><br><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git官网下载地址</a>，Git的安装过程同样保持默认就可以，安装路径可以自行修改。安装完成后Win+R打开命令行，输入<br></p>
-<pre><code>git --version
-</code></pre><p>得到结果如下图则代表正确<br><br><img src="https://i.imgur.com/SeSJFLm.png" alt=""><br></p>
-<h2 id="GitHub账户注册与配置"><a href="#GitHub账户注册与配置" class="headerlink" title="GitHub账户注册与配置"></a>GitHub账户注册与配置</h2><p>Git方面博主也是新手，这里不再过多阐述。可以参考<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的Git教程</a>自行学习，写的非常非常好<br><br>在完成注册之后创建代码库，如图所示<br><br><img src="https://i.imgur.com/VcppaVl.png" alt=""><br><br>在创建代码库页面中，Repository name表单中填写yourname.github.io，Description(optional)选填。如图所示<br><br><img src="https://i.imgur.com/OVtk7Bj.png" alt=""><br><br>我的名字是liyachuan,所以我在此处填写liyachuan.github.io。填写完成后点击创建代码库按钮级进行提交。在创建成功后的页面上面的tap中选择settings，下拉至GitHub Pages。若如下图所示则说明该功能开启。没有的话请百度一下，因为我创建的时候GitHub就自动配置了，我没有配置过（尴尬）。<br></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>接下来创建一个文件夹（位置随意），我创建在了D盘下，名称为hexo。从命令行进入该目录，然后输入<br></p>
-<pre><code>npm install hexo-cli -g
-</code></pre><p>结果如图所示（我已安装过，就不再执行，这里引用一下我学习的博客中展示的图片）<br><br><img src="https://i.imgur.com/jiVxhNA.jpg" alt=""><br><br>出现一个WARN不必过虑，不会影响正常使用，继续输入<br></p>
-<pre><code>npm install hexo --save
-</code></pre><p>在命令行刷过一堆白字后，接下来验证是否已经安装成功，输入<br></p>
-<pre><code>hexo -v
-</code></pre><p><img src="https://i.imgur.com/MbInPEP.jpg" alt=""><br><br>如图所示，则代表安装成功，然后再安装一个拓展<br></p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre><h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><p>接下来初始化Hexo，输入<br></p>
-<pre><code>hexo init
-npm install
-</code></pre><p>接下里npm会自动安装需要的组建，只需等待npm操作即可。完成后继续输入<br></p>
-<pre><code>hexo g
-</code></pre><p><img src="https://i.imgur.com/9HStRL2.jpg" alt=""><br><br>提示：<br></p>
-<blockquote>
-<p>INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="noopener">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.</p>
-</blockquote>
-<p>打开浏览器在地址栏输入<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>，打开后<br><br><img src="https://i.imgur.com/FHW3Z2e.jpg" alt=""><br><br>若如图中所示，则说明Hexo在本地已经配置结束。</p>
-<h1 id="关联Hexo和GitHub-page"><a href="#关联Hexo和GitHub-page" class="headerlink" title="关联Hexo和GitHub page"></a>关联Hexo和GitHub page</h1><h2 id="配置Git个人信息"><a href="#配置Git个人信息" class="headerlink" title="配置Git个人信息"></a>配置Git个人信息</h2><ol>
-<li>设置Git的user name和email（若之前已经配置过则可以跳过）</li>
-</ol>
-<pre><code>git config --global user.name &quot;your name&quot;
-git config --global user.email &quot;your email&quot;
-</code></pre><ol>
-<li>生成密钥</li>
-</ol>
-<pre><code>ssh-keygen -t rsa -C &quot;your email&quot;
-</code></pre><p>将生成的密钥添加到GitHub账户的SSH keys中，具体操作参考 gdutxiaoxu的<a href="http://blog.csdn.net/gdutxiaoxu/article/details/53573399" target="_blank" rel="noopener">Git ssh 配置及使用</a></p>
-<h2 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h2><p>在你刚才创建安装hexo的目录下找到_config.yml文件，打开找到Deployment，然后如下修改<br></p>
-<pre><code>deploy:
-    type: git
-    repo: git@github.com:yourname/yourname.github.io.git
-    branch: master
-</code></pre><h1 id="编写博客、发布文章"><a href="#编写博客、发布文章" class="headerlink" title="编写博客、发布文章"></a>编写博客、发布文章</h1><p>新建一篇博客，执行命令<br></p>
-<pre><code>hexo new post &quot;Test&quot;
-</code></pre><p>回车执行后会提示 </p>
-<blockquote>
-<p>INFO Created:安装目录\source_posts\test.md</p>
-</blockquote>
-<p>然后用MarkDownPad2进行编辑就可以，文章编辑好后运行生成、部署命令<br></p>
-<pre><code>hexo g  //生成
-hexo d  //部署
-hexo d -g  //这是二合一，与上面两条命令结果相同
-</code></pre><p>部署成功后访问地址 <a href="https://yourname.github.io" target="_blank" rel="noopener">https://yourname.github.io</a> 就可以看到结果啦！<br></p>
-<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>我现在用的是 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a>，里面有中文文档可以参阅，具体的样式设置、语言设置、新页面等都有说明。这里就不再多做记录，犯懒了。</p>
-<h1 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h1><p>添加sutenao个feed插件，命令行进入安装hexo的目录，输入<br></p>
-<pre><code>npm install hexo-generator-feed -save
-npm install hexo-generator-sitemap -save
-</code></pre><p>修改_config.yml，增加一下内容<br></p>
-<pre><code>Plugins:
-- hexo-generator-feed
-- hexo-generator-sitemap
-feed:
-type:atom
-path: atom.xml
-limit: 20
-sitemap:
-path: sitemap.xml
-</code></pre><p>在执行一下命令，部署服务端<br></p>
-<pre><code>hexo d -g
-</code></pre><p>配完之后，就可以访问 <a href="https://yourname.github.io/atom.xml" target="_blank" rel="noopener">https://yourname.github.io/atom.xml</a> 和 <a href="https://yourname.github.io/sitemap.xml" target="_blank" rel="noopener">https://yourname.github.io/sitemap.xml</a> ，发现这两个文件已经成功生成了。</p>
-
-          
-        
-      
-    </div>
-	<div>
-		
-	 </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2814,7 +2817,7 @@ path: sitemap.xml
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

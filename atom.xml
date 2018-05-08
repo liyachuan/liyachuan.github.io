@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-27T08:18:22.603Z</updated>
+  <updated>2018-05-08T08:33:29.417Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>201805081632</title>
+    <link href="http://yoursite.com/Java/201805081632/"/>
+    <id>http://yoursite.com/Java/201805081632/</id>
+    <published>2018-05-08T08:32:05.000Z</published>
+    <updated>2018-05-08T08:33:29.417Z</updated>
+    
+    <content type="html"><![CDATA[<p>原文连接：<a href="https://blog.csdn.net/RickyIT/article/details/78051334" title="https://blog.csdn.net/RickyIT/article/details/78051334" target="_blank" rel="noopener">https://blog.csdn.net/RickyIT/article/details/78051334</a></p><pre><code>/** * 标准差σ=sqrt(s^2) * 结果精度：scale * 牛顿迭代法求大数开方 * * @param x * @param scale * @return */public static BigDecimal standardDeviation(BigDecimal[] x, int scale) {    //方差    BigDecimal variance = variance(x, scale);    BigDecimal base2 = BigDecimal.valueOf(2.0);    //计算精度    int precision = 100;    MathContext mc = new MathContext(precision, RoundingMode.HALF_UP);    BigDecimal deviation = variance;    int cnt = 0;    while (cnt &lt; 100) {        deviation = (deviation.add(variance.divide(deviation, mc))).divide(base2, mc);        cnt++;    }    deviation = deviation.setScale(scale, BigDecimal.ROUND_HALF_UP);    return deviation;}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;原文连接：&lt;a href=&quot;https://blog.csdn.net/RickyIT/article/details/78051334&quot; title=&quot;https://blog.csdn.net/RickyIT/article/details/78051334&quot; targ
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>listFiles()按文件大小、名称、日期排序方法</title>
+    <link href="http://yoursite.com/Java/201805081627/"/>
+    <id>http://yoursite.com/Java/201805081627/</id>
+    <published>2018-05-08T08:27:11.000Z</published>
+    <updated>2018-05-08T08:30:07.492Z</updated>
+    
+    <content type="html"><![CDATA[<p>按照文件大小排序 </p><pre><code>public static void orderByLength(String fliePath) {    List&lt;File&gt; files = Arrays.asList(new File(fliePath).listFiles());    Collections.sort(files, new Comparator&lt;File&gt;() {        public int compare(File f1, File f2) {            long diff = f1.length() - f2.length();            if (diff &gt; 0)                return 1;            else if (diff == 0)                return 0;            else                return -1;        }        public boolean equals(Object obj) {            return true;        }    });    for (File f : files) {        if (f.isDirectory())            continue;        System.out.println(f.getName() + &quot;:&quot; + f.length());    }}</code></pre><p>按照文件名称排序</p><pre><code>public static void orderByName(String fliePath) {    List files = Arrays.asList(new File(fliePath).listFiles());    Collections.sort(files, new Comparator&lt;File&gt;() {        @Override        public int compare(File o1, File o2) {            if (o1.isDirectory() &amp;&amp; o2.isFile())                return -1;            if (o1.isFile() &amp;&amp; o2.isDirectory())                return 1;            return o1.getName().compareTo(o2.getName());        }    });    for (File f : files) {        System.out.println(f.getName());    }}</code></pre><p>按日期排序</p><pre><code>public static void orderByDate(String fliePath) {    File file = new File(fliePath);    File[] fs = file.listFiles();    Arrays.sort(fs, new Comparator&lt;File&gt;() {        public int compare(File f1, File f2) {            long diff = f1.lastModified() - f2.lastModified();            if (diff &gt; 0)                return 1;            else if (diff == 0)                return 0;            else                return -1;        }        public boolean equals(Object obj) {            return true;        }    });    for (int i = fs.length - 1; i &gt; -1; i--) {        System.out.println(fs[i].getName());        System.out.println(new Date(fs[i].lastModified()));    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;按照文件大小排序 &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public static void orderByLength(String fliePath) {
+    List&amp;lt;File&amp;gt; files = Arrays.asList(new File(fliePath
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>分行读取String内容</title>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-08T08:45:22.544Z</updated>
+  <updated>2018-05-09T04:13:38.306Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>导出jar包时因第三方jar包导致运行失败解决方案</title>
+    <link href="http://yoursite.com/Java/201805091210/"/>
+    <id>http://yoursite.com/Java/201805091210/</id>
+    <published>2018-05-09T04:10:23.000Z</published>
+    <updated>2018-05-09T04:13:38.306Z</updated>
+    
+    <content type="html"><![CDATA[<p>正确的打包步骤：</p><p>第一：普通类导出jar包，我说的普通类就是指此类包含main方法，并且没有用到别的jar包。</p><p>1.在eclipse中选择你要导出的类或者package，右击，选择Export子选项；</p><p>2.在弹出的对话框中，选择java文件—选择JAR file，单击next；</p><p>3.在JAR file后面的文本框中选择你要生成的jar包的位置以及名字，注意在Export generated class files and resources和Export java source files and resources前面打上勾，单击next;</p><p>4.单击两次next按钮，到达JAR Manifest Specification。注意在最底下的Main class后面的文本框中选择你的jar包的入口类。单击Finish，完成。</p><p>你可以在dos环境下，进入你的jar所在的目录，运行 java -jar 名字.jar，检测运行是否正确。</p><p>第二、你所要导出的类里边用到了别的jar包。比如说你写的类连接了数据库，用到数据库驱动包oracl.jar.。</p><p>1.先把你要导出的类按照上面的步骤导出形成jar包，比如叫test.jar</p><p>2.新建一个文件夹main，比如在D盘根目录下；</p><p>3.把test.jar和oracl.jar拷贝到main文件下，右击test.jar，解压到当前文件夹。把META-INF\MANIFEST.MF剪切到另外一个地方 （比如是桌面！） ；</p><p>4.右击oracl.jar，解压到当前文件夹。</p><p>5.在dos环境下，进入到D盘的main文件夹下，执行 jar cvfm new.jar meta-inf/manifest.mf .，不要忘了最后面的点。</p><p>6.用压缩工具打开你新生成的new.jar，用你放在桌面的META-INF\MANIFEST.MF覆盖new.jar原有。</p><p>你可以在dos环境下，进入你的jar所在的目录，运行 java -jar 名字.jar，检测运行是否正确。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;正确的打包步骤：&lt;/p&gt;
+&lt;p&gt;第一：普通类导出jar包，我说的普通类就是指此类包含main方法，并且没有用到别的jar包。&lt;/p&gt;
+&lt;p&gt;1.在eclipse中选择你要导出的类或者package，右击，选择Export子选项；&lt;/p&gt;
+&lt;p&gt;2.在弹出的对话框中，选择ja
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java BigDecimal开方</title>
